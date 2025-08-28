@@ -1,103 +1,65 @@
 import Image from "next/image";
+import { Header1 } from "@/components/header1";
+import { Footer } from "@/components/footer";
+import { Hero1 } from "@/components/hero1";
+import { Hero2 } from "@/components/hero2";
+import { Feature3 } from "@/components/feature3";
+import { Feature3Custom } from "@/components/feature3-custom";
+import { Feature3Custom2 } from "@/components/feature3-custom2";
+import { Feature4 } from "@/components/feature4";
+import { Feature4Custom } from "@/components/feature4-custom";
+import { Feature4Custom2 } from "@/components/feature4-custom2";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <Header1 />
+      <main className="pt-20">
+      <Hero1 />
+      <div className="w-full flex justify-center pb-12 lg:pb-20 px-4 lg:px-0">
+        <div className="relative inline-block">
+          <Image
+            src="/ahero.png"
+            alt="Hero image"
+            width={480}
+            height={360}
+            className="max-w-full h-auto"
+            priority
+          />
+          
+          {/* Floating badges with questions */}
+          <div className="absolute -top-4 sm:-top-6 left-2 sm:-left-16 floating-badge-1">
+            <div className="px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm whitespace-normal sm:whitespace-nowrap break-words max-w-[80vw] sm:max-w-none shadow-lg text-white bg-[#948e89]/90 backdrop-blur-sm flex items-center justify-center text-center leading-snug">
+              ¿Cómo está el percentil respecto al semestre anterior?
+            </div>
+          </div>
+          
+          <div className="absolute top-16 sm:top-8 right-2 sm:-right-12 floating-badge-2">
+            <div className="px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm whitespace-normal sm:whitespace-nowrap break-words max-w-[80vw] sm:max-w-none shadow-lg text-white bg-[#948e89]/90 backdrop-blur-sm flex items-center justify-center text-center leading-snug">
+              ¿Dónde están las ecografías?
+            </div>
+          </div>
+          
+          <div className="absolute top-1/3 right-2 sm:-right-14 floating-badge-3">
+            <div className="px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm whitespace-normal sm:whitespace-nowrap break-words max-w-[80vw] sm:max-w-none shadow-lg text-white bg-[#948e89]/90 backdrop-blur-sm flex items-center justify-center text-center leading-snug">
+              ¿Cuándo es mi próxima ecografía?
+            </div>
+          </div>
+          
+          <div className="absolute top-1/3 sm:top-1/2 left-2 sm:-left-12 sm:transform sm:-translate-y-1/2 floating-badge-4">
+            <div className="px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm whitespace-normal sm:whitespace-nowrap break-words max-w-[80vw] sm:max-w-none shadow-lg text-white bg-[#948e89]/90 backdrop-blur-sm flex items-center justify-center text-center leading-snug">
+              ¿Qué significan estos valores?
+            </div>
+          </div>
         </div>
+      </div>
+      <Feature3Custom />
+      <Feature4Custom />
+      <Feature3Custom2 />
+      <Feature4Custom2 />
+      <Hero2 />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 }
